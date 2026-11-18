@@ -32,12 +32,12 @@ function appendUserMessage(text) {
 }
 
 function cardsMarkup(items) {
-  if (!items.length) return '<div class="empty-state"><strong>I couldn’t find a close match in this demo.</strong>Try a product or service name, or add another detail like a neighborhood. The sample catalog is small, so some requests won’t have a match yet.</div>';
+  if (!items.length) return '<div class="empty-state"><strong>I couldn\'t find a close match in this demo.</strong>Try a product or service name, or add another detail like a neighborhood. The sample catalog is small, so some requests won\'t have a match yet.</div>';
   return `<div class="match-list">${items.map((item) => `
     <article class="match-card">
       <a class="match-art ${item.kind}" href="./profile.html?id=${item.id}" aria-label="View ${item.name} profile">${art[item.kind]}</a>
-      <div class="match-info"><div class="match-category">${item.category}</div><h3><a href="./profile.html?id=${item.id}">${item.name}</a>${item.verified ? '<span class="verified-pill"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg>Custo verified</span>' : ''}</h3><p>${item.description}</p><div class="match-meta"><span>${item.location} · ${item.distance}</span><span class="match-rating">★ ${item.rating}</span></div></div>
-      <a class="match-contact" href="./profile.html?id=${item.id}" aria-label="View ${item.name} profile">View profile ↗</a>
+      <div class="match-info"><div class="match-category">${item.category}</div><h3><a href="./profile.html?id=${item.id}">${item.name}</a>${item.verified ? '<span class="verified-pill"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg>Custo verified</span>' : ''}</h3><p>${item.description}</p><div class="match-meta"><span>${item.location} \u00b7 ${item.distance}</span><span class="match-rating">\u2605 ${item.rating}</span></div></div>
+      <a class="match-contact" href="./profile.html?id=${item.id}" aria-label="View ${item.name} profile">View profile \u2197</a>
     </article>`).join('')}</div>`;
 }
 
@@ -47,11 +47,16 @@ function appendAssistantResponse(query) {
   row.className = 'assistant-message-row';
   const content = document.createElement('div');
   content.className = 'assistant-content';
+
+  // ── Response Template Engine ──────────────────────────────────────────────
+  // responses.js exposes window.CUSTO_RESPONSES.getIntro(query, matches).
+  // It profiles the user's session (verbosity, tone, intent history) and
+  // selects one of 10 per-intent templates so each response feels fresh.
   const intro = document.createElement('p');
-  intro.textContent = matches.length
-    ? `I found ${matches.length === 1 ? 'a local option' : `${matches.length} local options`} that may fit what you’re looking for. You can contact a seller directly to confirm details.`
-    : 'I’m not seeing a close match in the small sample catalog yet. A broader product name or a different request may turn up a result.';
+  intro.textContent = window.CUSTO_RESPONSES.getIntro(query, matches);
   content.append(intro);
+  // ─────────────────────────────────────────────────────────────────────────
+
   if (matches.length) {
     const head = document.createElement('div');
     head.className = 'match-head';
