@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f7f4" />
+    <meta name="description" content="Find trusted local businesses and products with Custo.AI." />
+    <title>Custo.AI — Local discovery, in a conversation</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./catalog.js" defer></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#top" aria-label="Custo.AI home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M25 10.2a11 11 0 1 0 .1 11.7M25 10.2v7.2m0-7.2h-7.2" /></svg></span><span>custo<span class="brand-dot">.</span>ai</span></a>
+        <button class="new-chat" id="new-chat"><span aria-hidden="true">＋</span> New chat</button>
+        <div class="side-label">STARTER PROMPTS</div>
+        <div class="chat-history"><button class="history-item" data-query="Find an eco-friendly coffee cup supplier in Accra"><span class="history-icon" aria-hidden="true">◌</span><span>Coffee cup supplier</span></button><button class="history-item" data-query="Help me find waterproof hiking boots in Accra"><span class="history-icon" aria-hidden="true">◌</span><span>Hiking boots nearby</span></button><button class="history-item" data-query="I need custom printed tote bags in Accra"><span class="history-icon" aria-hidden="true">◌</span><span>Custom tote bags</span></button></div>
+        <div class="side-spacer"></div>
+        <a class="seller-side-link" href="./seller.html"><span class="seller-avatar">B</span><span><b>For businesses</b><small>List your business</small></span><span class="side-arrow" aria-hidden="true">↗</span></a>
+        <div class="sidebar-foot">Local commerce, connected.</div>
+      </aside>
+
+      <main class="chat-main" id="top">
+        <header class="chat-header"><button class="mobile-menu" id="mobile-menu" aria-label="Open menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg></button><div class="header-context"><span class="assistant-badge"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M25 10.2a11 11 0 1 0 .1 11.7M25 10.2v7.2m0-7.2h-7.2" /></svg></span><span><b>Custo assistant</b><small>Local discovery · Accra, Ghana</small></span></div><div class="location-control" aria-label="Current search area"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 8.3c0 4.1-6 9-6 9s-6-4.9-6-9a6 6 0 1 1 12 0Z"/><circle cx="10" cy="8" r="2"/></svg><span>Accra, Ghana</span></div></header>
+
+        <section class="conversation" id="conversation" aria-label="Conversation" aria-live="polite">
+          <div class="welcome-block" id="welcome-block">
+            <div class="welcome-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M25 10.2a11 11 0 1 0 .1 11.7M25 10.2v7.2m0-7.2h-7.2" /></svg></div>
+            <div class="welcome-kicker">YOUR LOCAL SHOPPING ASSISTANT</div>
+            <h1>What are you<br /><em>looking for?</em></h1>
+            <p>Tell me what you need and where you need it. I’ll help you find a local business to talk to.</p>
+            <div class="prompt-suggestions" aria-label="Try asking">
+              <button class="prompt-card" data-query="Eco-friendly coffee cups for my café in Accra"><span class="prompt-icon green">↗</span><span><b>Stock my café</b><small>Eco-friendly coffee cups</small></span></button>
+              <button class="prompt-card" data-query="Waterproof hiking boots available in Accra"><span class="prompt-icon blue">⌁</span><span><b>Get outdoors</b><small>Waterproof hiking boots</small></span></button>
+              <button class="prompt-card" data-query="A reliable supplier for custom printed tote bags in Accra"><span class="prompt-icon orange">✳</span><span><b>Make it custom</b><small>Printed cotton tote bags</small></span></button>
+            </div>
+          </div>
+        </section>
+
+        <div class="composer-wrap">
+          <form class="composer" id="chat-form">
+            <label class="sr-only" for="query">Message Custo assistant</label>
+            <textarea id="query" rows="1" placeholder="Message Custo…" required></textarea>
+            <div class="composer-bottom"><div class="composer-hint"><span class="sparkle" aria-hidden="true">✳</span> Ask for a product, service, or supplier</div><button class="send-button" type="submit" aria-label="Send message"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-7 7 7-7 7 7" /></svg></button></div>
+          </form>
+          <p class="disclaimer">Custo can make mistakes. Confirm prices and availability with the seller.</p>
+        </div>
+      </main>
+    </div>
+    <div class="mobile-scrim" id="mobile-scrim"></div>
+  </body>
+</html>

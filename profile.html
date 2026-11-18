@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f7f4" />
+    <meta name="description" content="Business profile on Custo.AI." />
+    <title>Business profile — Custo.AI</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./catalog.js" defer></script>
+    <script src="./profile.js" defer></script>
+  </head>
+  <body class="profile-page">
+    <header class="profile-top">
+      <a class="brand" href="./index.html" aria-label="Custo.AI home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M25 10.2a11 11 0 1 0 .1 11.7M25 10.2v7.2m0-7.2h-7.2" /></svg></span><span>custo<span class="brand-dot">.</span>ai</span></a>
+      <a class="profile-back" href="./index.html"><span aria-hidden="true">←</span> Back to discovery</a>
+    </header>
+    <main class="profile-container" id="profile-content">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="./index.html">Discover</a><span aria-hidden="true">/</span><span id="breadcrumb-name">Business profile</span></nav>
+      <div class="profile-demo-note"><span aria-hidden="true">ⓘ</span><span><b>Sample profile.</b> Business details, photos, reviews, verification, and contact actions shown here are illustrative and not live.</span></div>
+      <section class="profile-cover" id="profile-cover" aria-label="Business photo gallery"><div class="cover-main" id="cover-main"></div><div class="cover-side"><div class="cover-side-one" id="cover-side-one"></div><div class="cover-side-two" id="cover-side-two"></div></div><span class="cover-label">Sample gallery</span></section>
+      <div class="profile-heading">
+        <span class="profile-avatar" id="profile-avatar"></span>
+        <div class="profile-title"><div class="profile-category" id="profile-category"></div><h1 id="business-name"></h1><div class="profile-subtitle" id="profile-subtitle"></div></div>
+        <div class="profile-rating" id="profile-rating"></div>
+      </div>
+
+      <div class="profile-layout">
+        <div class="profile-main-column">
+          <section class="profile-panel profile-about"><div class="panel-heading"><div><div class="panel-eyebrow">ABOUT THIS BUSINESS</div><h2>What they do</h2></div><div id="verification-status"></div></div><p id="business-about"></p><div class="profile-facts"><div><span class="fact-icon">⌖</span><span><b>Location</b><small id="business-address"></small></span></div><div><span class="fact-icon">◷</span><span><b>Hours</b><small id="business-hours"></small></span></div><div><span class="fact-icon">▦</span><span><b>Category</b><small id="business-category-fact"></small></span></div></div></section>
+          <section class="profile-panel"><div class="panel-heading"><div><div class="panel-eyebrow">THE CATALOG</div><h2>Products & services</h2></div><span class="catalog-count" id="catalog-count"></span></div><div class="catalog-grid" id="catalog-grid"></div><p class="catalog-note">Sample catalog only. Contact the business to confirm pricing, options, and availability.</p></section>
+          <section class="profile-panel location-panel"><div class="panel-heading"><div><div class="panel-eyebrow">FIND THEM</div><h2>Location</h2></div></div><div class="map-preview"><div class="map-roads"></div><span class="map-place place-one" id="map-neighborhood"></span><span class="map-place place-two">Local road</span><span class="map-pin"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 8.3c0 4.1-6 9-6 9s-6-4.9-6-9a6 6 0 1 1 12 0Z"/><circle cx="10" cy="8" r="2"/></svg></span><span class="map-caption" id="map-caption"></span><span class="map-disclaimer">Illustrative map preview</span></div><p class="location-address" id="location-address"></p></section>
+        </div>
+        <aside class="profile-side-column">
+          <section class="contact-panel"><div class="panel-eyebrow">GET IN TOUCH</div><h2>Contact this business</h2><p class="contact-intro">Ask about a product, availability, or a custom order.</p><div class="contact-actions"><button type="button" data-demo-contact="Phone"><span class="contact-icon">⌕</span><span><b>Call</b><small>Phone details unavailable</small></span><span class="contact-arrow">↗</span></button><button type="button" data-demo-contact="WhatsApp"><span class="contact-icon">◌</span><span><b>WhatsApp</b><small>Messaging not connected</small></span><span class="contact-arrow">↗</span></button><button type="button" data-demo-contact="Website"><span class="contact-icon">↗</span><span><b>Website</b><small>No website linked</small></span><span class="contact-arrow">↗</span></button></div><p class="contact-status" id="contact-status" role="status">Contact actions are disabled for sample listings.</p></section>
+          <section class="trust-panel"><div class="trust-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Zm-3 9 2 2 4-5" /></svg></div><div><h3>Trust on Custo</h3><p id="trust-copy"></p><a href="./index.html#how-it-works">How verification works <span aria-hidden="true">→</span></a></div></section>
+          <section class="profile-tip"><span aria-hidden="true">✳</span><p><b>Have a specific requirement?</b><br />Mention quantity, budget, and timing when you contact the business.</p></section>
+        </aside>
+      </div>
+    </main>
+    <footer class="profile-footer"><a class="brand footer-brand" href="./index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M25 10.2a11 11 0 1 0 .1 11.7M25 10.2v7.2m0-7.2h-7.2" /></svg></span><span>custo<span class="brand-dot">.</span>ai</span></a><span>Local commerce, connected.</span><span>© 2026 Custo.AI · Demo profile</span></footer>
+  </body>
+</html>

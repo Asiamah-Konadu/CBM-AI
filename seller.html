@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8f8f5" />
+    <meta name="description" content="Create a Custo.AI business profile." />
+    <title>List your business — Custo.AI</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./seller.js" defer></script>
+  </head>
+  <body class="seller-page">
+    <header class="seller-top">
+      <a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M25 10.2a11 11 0 1 0 .1 11.7M25 10.2v7.2m0-7.2h-7.2" /></svg></span><span>custo<span class="brand-dot">.</span>ai</span></a>
+      <a class="seller-back" href="./index.html"><span aria-hidden="true">←</span> Back to discovery</a>
+    </header>
+    <main class="seller-container">
+      <aside class="seller-aside">
+        <div class="eyebrow">SELLER ONBOARDING · DEMO</div>
+        <h1>Let customers<br />find your business.</h1>
+        <p>Create a profile for your business. Your details help nearby customers discover and contact you.</p>
+        <div class="progress-list" aria-label="Onboarding steps">
+          <div class="progress-step active"><span class="progress-circle">1</span><span>Business details</span></div>
+          <div class="progress-step"><span class="progress-circle">2</span><span>Products & services</span></div>
+          <div class="progress-step"><span class="progress-circle">3</span><span>Verification</span></div>
+        </div>
+        <div class="seller-note"><b>About verification</b>Verification follows a review of your business details and supporting evidence. A badge will only appear after Custo approves the review.</div>
+      </aside>
+
+      <section class="seller-form-card" aria-labelledby="form-title">
+        <div class="form-section-heading"><div><h2 id="form-title">Business details</h2><p>Start with the information customers need to reach you.</p></div><span class="required-note">* Required</span></div>
+        <form id="seller-form">
+          <div class="field-grid">
+            <div class="field"><label for="business-name">Business name *</label><input id="business-name" name="business-name" autocomplete="organization" placeholder="e.g. Green Cup Collective" required /></div>
+            <div class="field"><label for="category">Business category *</label><select id="category" name="category" required><option value="">Choose a category</option><option>Food & drink</option><option>Retail & shopping</option><option>Wholesale & suppliers</option><option>Home & services</option><option>Health & wellness</option><option>Other</option></select></div>
+            <div class="field full"><label for="description">About your business *</label><textarea id="description" name="description" maxlength="400" placeholder="What do you offer, and who do you serve?" required></textarea><span class="field-hint">A short, clear description helps customers know if you’re a fit.</span></div>
+            <div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+233 …" required /></div>
+            <div class="field"><label for="whatsapp">WhatsApp number</label><input id="whatsapp" name="whatsapp" type="tel" placeholder="If different from phone" /></div>
+            <div class="field full"><label for="address">Business address *</label><input id="address" name="address" autocomplete="street-address" placeholder="Street, neighborhood, city" required /><span class="field-hint">Use the location customers should visit. You can refine the map pin later.</span></div>
+            <div class="field"><label for="website">Website</label><input id="website" name="website" type="url" autocomplete="url" placeholder="https://example.com" /></div>
+            <div class="field"><label for="hours">Typical opening hours</label><input id="hours" name="hours" placeholder="e.g. Mon–Fri, 9am–5pm" /></div>
+          </div>
+          <hr class="form-divider" />
+          <div class="form-section-heading"><div><h2>Verification documents</h2><p>Share a business registration document or other proof for review.</p></div></div>
+          <div class="field-grid">
+            <div class="field full"><label for="document">Supporting document</label><input id="document" name="document" type="file" accept=".pdf,.png,.jpg,.jpeg" /><span class="field-hint">PDF or image, up to 10 MB. Demo only: the selected file is not uploaded or stored.</span></div>
+          </div>
+          <hr class="form-divider" />
+          <div class="form-actions"><p>This demo does not submit or save business information.</p><button class="primary-button" type="submit">Preview onboarding <span aria-hidden="true">→</span></button></div>
+          <div class="seller-success" id="seller-success" role="status">Your form is complete. In the live portal, the next step would be product listings and document review. Nothing was submitted.</div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
